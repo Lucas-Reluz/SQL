@@ -28,3 +28,17 @@ WHERE Endereco LIKE '%Rua Clei%'
 
 SELECT * FROM Produtos
 WHERE Preco BETWEEN 5 AND 40
+
+SELECT Usuarios.Nome AS Nome, SUM(Produtos.Preco) AS 'Total gasto'
+FROM Usuarios
+INNER JOIN Compras ON Usuarios.ID = Compras.FK_Comprador
+INNER JOIN Produtos ON FK_Produto = Produtos.ID
+GROUP BY Usuarios.Nome;
+
+SELECT Usuarios.Nome AS Nome, Produtos.NomeProduto AS 'Nome do Produto', Produtos.Preco AS Preço
+FROM Usuarios
+LEFT JOIN Produtos ON  Usuarios.ID = Produtos.FK_Criador
+
+UPDATE Produtos
+SET Preco = NULL
+WHERE ID = 1

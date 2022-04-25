@@ -21,7 +21,29 @@ SELECT * FROM Postagens
 SELECT * FROM Postagens
 WHERE ID = 3
 
+SELECT COUNT(*) Nome
+FROM Usuarios
+
+SELECT * 
+FROM Usuarios
+FULL JOIN Postagens ON Usuarios.ID = Postagens.FK_Usuario
+FULL JOIN Tema ON Tema.ID = FK_Temas
+
+SELECT * FROM Postagens
+WHERE Descricao LIKE '%Estou procurando%'
+
+
+
+
+
+
+
+UPDATE Postagens
+SET Titulo = NULL
+WHERE ID = 3
+
+
 --SELECT Postagens.Descricao
 --FROM Postagens
 --INNER JOIN Usuarios ON Usuarios.Nome = Usuarios.ID
---Boaz, me ensine depois isso Vou deixar Comentado
+--Boaz, me ensine depois isso Vou deixar Comentado, APRENDI!!! OBRIGADOOOO

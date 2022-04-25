@@ -23,4 +23,12 @@ SELECT * FROM Compras
 SELECT * FROM PRODUTOS
 WHERE Preco = 890.30
 
-SELECT * FROM Usuarios
+SELECT * FROM PRODUTOS
+WHERE PRODUTOS.Categoria IN ('MOVEIS', 'SMARTPHONES')
+
+SELECT Usuarios.Nome AS Nome, Usuarios.CPF AS CPF, Compras.Valor
+FROM Usuarios
+INNER JOIN Compras ON Usuarios.ID = FK_Usuario
+
+SELECT SUM(PRODUTOS.Preco) AS 'Soma do valor de todos os Produtos'
+FROM PRODUTOS

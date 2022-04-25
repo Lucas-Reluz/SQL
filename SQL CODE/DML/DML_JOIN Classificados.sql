@@ -17,3 +17,17 @@ SELECT * FROM Usuarios
 WHERE ID = 3
 
 SELECT * FROM ANUNCIO
+
+SELECT Usuarios.Nome AS Nome,ANUNCIO.Titulo AS Titulo, Usuarios.Email AS Email, ANUNCIO.Descricao AS Descrição
+FROM Usuarios
+RIGHT JOIN ANUNCIO ON Usuarios.ID = FK_Usuario
+WHERE Descricao LIKE '%Trabalhar como%'
+GROUP BY Usuarios.Nome, Usuarios.Email, ANUNCIO.Descricao, ANUNCIO.Titulo
+
+SELECT COUNT(*) Descricao
+FROM ANUNCIO
+
+
+UPDATE ANUNCIO
+SET Titulo = Null
+WHERE ID = 1
